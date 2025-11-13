@@ -12,6 +12,14 @@ This is a minimal React + Vite site for Raj Construction. Files were scaffolded 
 - Typography: Inter + Manrope with uppercase eyebrow labels for hierarchy.
 - Layout utilities live in `src/styles.css` (shell spacing, grids, CTA buttons, tags, etc.).
 
+### Architecture
+
+- `src/hooks/useSiteContent.js` centralizes all narrative copy, lists, and stats (single responsibility & easy localization).
+- `src/hooks/useContactInfo.js` encapsulates owner/contact metadata and map embed logic.
+- Presentational sections live in `src/components/` (Header, Hero, StatsBand, ServicesSection, ApproachSection, ProjectsSection, TestimonialsSection, ContactSection, Footer).
+- `src/App.jsx` composes the page via hooks + components, keeping orchestration separate from data and view layers.
+- Add future sections by extending the hooks (data) and dropping a new component into the App composition.
+
 ### Quick start
 
 1. Install dependencies:

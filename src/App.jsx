@@ -10,7 +10,6 @@ import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
 import { useSiteContent } from './hooks/useSiteContent'
 import { useContactInfo } from './hooks/useContactInfo'
-import { useHeaderCollapse } from './hooks/useHeaderCollapse'
 
 export default function App() {
   const {
@@ -25,7 +24,6 @@ export default function App() {
     brandTagline
   } = useSiteContent()
   const contact = useContactInfo()
-  const isCondensed = useHeaderCollapse()
 
   return (
     <div className="site">
@@ -35,7 +33,6 @@ export default function App() {
         phone={contact.phone}
         email={contact.email}
         navigation={navigation}
-        isCondensed={isCondensed}
       />
       <main>
         <Hero hero={hero} />

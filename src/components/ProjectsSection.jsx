@@ -9,12 +9,21 @@ export default function ProjectsSection({ projects }) {
       </div>
       <div className="project-grid">
         {projects.map((project) => (
-          <article key={project.name} className="project-card">
-            <p className="project-label">{project.location}</p>
-            <h4>{project.name}</h4>
-            <p className="project-scope">{project.scope}</p>
-            <p>{project.outcome}</p>
-          </article>
+          <div className="project-card" key={project.name}>
+            <div className="project-photo">
+              {project.photo ? (
+                <img src={project.photo} alt={project.name + ' photo'} />
+              ) : (
+                <div className="project-photo--placeholder" />
+              )}
+            </div>
+            <div className="project-details">
+              <p className="project-label">{project.location}</p>
+              <h4>{project.name}</h4>
+              <p className="project-scope">{project.scope}</p>
+              <p>{project.outcome}</p>
+            </div>
+          </div>
         ))}
       </div>
     </section>

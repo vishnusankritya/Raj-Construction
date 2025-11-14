@@ -1,9 +1,8 @@
 import React from 'react'
 
-export default function Header({ brandTagline, owner, phone, email, navigation, isCondensed }) {
+export default function Header({ brandTagline, owner, phone, email, navigation }) {
   const headerClass = ['site-header']
-  if (isCondensed) headerClass.push('site-header--condensed')
-  const brandText = isCondensed ? 'Raj Construction' : brandTagline
+  const brandText = brandTagline
 
   return (
     <header className={headerClass.join(' ')}>

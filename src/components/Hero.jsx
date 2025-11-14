@@ -4,10 +4,10 @@ export default function Hero({ hero }) {
   return (
     <section className="hero">
       <div className="shell hero-grid">
-        <div>
-          <p className="eyebrow">{hero.eyebrow}</p>
-          <h2>{hero.heading}</h2>
-          <p className="lede">{hero.lede}</p>
+        <div className="hero-content">
+          <h2 className="eyebrow">{hero.eyebrow}</h2>
+          <p className="lede">{hero.heading}</p>
+          <p>{hero.lede}</p>
           <div className="actions">
             {hero.actions.map((action) => (
               <a key={action.label} className={`button button--${action.variant}`} href={action.href}>

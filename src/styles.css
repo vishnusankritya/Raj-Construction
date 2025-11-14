@@ -259,6 +259,24 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 2.5rem;
   align-items: center;
+  padding: 0 20px;
+}
+
+.hero-content .eyebrow {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.hero-content .lede {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--clr-cloud);
+  max-width: 540px;
+}
+
+.hero-content p {
+  max-width: 540px;
+  padding: 0 20px;
 }
 
 .lede {
@@ -314,7 +332,7 @@ a {
 .hero-card {
   background: rgba(255, 255, 255, 0.04);
   border-radius: var(--radius-lg);
-  padding: 2rem;
+  padding: 2.5rem;
   box-shadow: var(--shadow-card);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -342,18 +360,20 @@ a {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  align-items: flex-start;
+  align-items: stretch;
+  margin-top: 2rem;
 }
 
 .hero-card__notes span {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   background: transparent;
   border: 1px solid var(--clr-gold);
   border-radius: 999px;
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--clr-gold);
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease;
+  text-align: center;
 }
 
 .hero-card__notes span:hover {

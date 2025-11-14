@@ -66,25 +66,20 @@ a {
   position: sticky;
   top: 0;
   z-index: 10;
-  padding: 1rem 1.25rem;
+  padding: 1rem 1.5rem;
   transition: padding 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
-.site-header .shell {
-  padding-left: clamp(1rem, 4vw, 2rem);
-  padding-right: clamp(0.5rem, 2vw, 1rem);
-}
-
 .site-header--condensed {
-  padding: 0.5rem 0;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   background: rgba(7, 12, 20, 0.92);
   border-bottom-color: rgba(255, 255, 255, 0.15);
 }
 
 .header-grid {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -119,6 +114,10 @@ a {
 }
 
 @media (max-width: 768px) {
+  .brand {
+    font-size: 1.8rem;
+  }
+
   .header-tagline {
     display: none;
   }

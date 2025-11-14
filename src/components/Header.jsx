@@ -15,7 +15,7 @@ export default function Header({ brandTagline, owner, phone, email, navigation }
 
   return (
     <header ref={headerRef} className={headerClass.join(' ')}>
-      <div className="shell header-grid">
+      <div className="header-grid">
         <div className="header-intro">
           <h1 className="brand" aria-live="polite">
             Raj Constructions

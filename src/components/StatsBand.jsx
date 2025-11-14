@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function StatsBand({ stats }) {
   return (
-    <section className="stats-band">
+    <section className="stats-band section">
       <div className="shell stats-grid">
         {stats.map((stat) => (
           <article key={stat.label}>

@@ -3,7 +3,7 @@ import React from 'react'
 export default function ContactSection({ contact }) {
   return (
     <section id="contact" className="section shell contact">
-      <div>
+      <div className="section-content">
         <p className="eyebrow">Contact</p>
         <h3>Ready to walk your site?</h3>
         <p>

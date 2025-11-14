@@ -3,7 +3,7 @@ import React from 'react'
 export default function ApproachSection({ differentiators, toolkit }) {
   return (
     <section id="approach" className="section shell split">
-      <div>
+      <div className="section-content">
         <p className="eyebrow">How we work</p>
         <h3>Precision frameworks and client-first rituals.</h3>
         <p>

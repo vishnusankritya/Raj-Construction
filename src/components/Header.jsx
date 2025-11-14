@@ -1,17 +1,22 @@
 import React from 'react'
+import { useHeaderCollapse } from '../hooks/useHeaderCollapse'
 
 export default function Header({ brandTagline, owner, phone, email, navigation }) {
+  const { isCondensed, headerRef } = useHeaderCollapse()
   const headerClass = ['site-header']
-  const brandText = brandTagline
+  
+  if (isCondensed) {
+    headerClass.push('site-header--condensed')
+  }
 
   return (
-    <header className={headerClass.join(' ')}>
+    <header ref={headerRef} className={headerClass.join(' ')}>
       <div className="shell header-grid">
         <div className="header-intro">
-          <p className="eyebrow header-tagline">Raj Constructions </p>
           <h1 className="brand" aria-live="polite">
-            {brandText}
+            Raj Constructions
           </h1>
+          <p className="eyebrow header-tagline">{brandTagline}</p>
         </div>
         <nav className="nav" aria-label="Primary navigation">
           {navigation.map((link) => (

@@ -1,7 +1,8 @@
 import { useEffect, useState, useRef } from 'react'
 
-export function useHeaderCollapse(threshold = 120) {
+export function useHeaderCollapse() {
   const [isCondensed, setIsCondensed] = useState(false)
+  const headerRef = useRef(null)
   const rafRef = useRef(null)
   const debounceRef = useRef(null)
 
@@ -11,6 +12,9 @@ export function useHeaderCollapse(threshold = 120) {
       if (debounceRef.current) clearTimeout(debounceRef.current)
 
       rafRef.current = requestAnimationFrame(() => {
+        // Calculate 50% of the header's height as the threshold
+        const headerHeight = headerRef.current?.offsetHeight || 0
+        const threshold = headerHeight * 0.5
         const shouldCondense = window.scrollY > threshold
 
         debounceRef.current = setTimeout(() => {
@@ -27,7 +31,7 @@ export function useHeaderCollapse(threshold = 120) {
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
       if (debounceRef.current) clearTimeout(debounceRef.current)
     }
-  }, [threshold])
+  }, [])
 
-  return isCondensed
+  return { isCondensed, headerRef }
 }

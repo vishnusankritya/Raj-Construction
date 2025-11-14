@@ -25,7 +25,11 @@ export default function Header({ brandTagline, owner, phone, email, navigation }
         <div className="nav-container">
           <nav className="nav" aria-label="Primary navigation">
             {navigation.map((link) => (
-              <a key={link.href} href={link.href}>
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsMenuOpen(false)}
+              >
                 {link.label}
               </a>
             ))}
